@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[letterpaper, portrait, margin=0.8in]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{sidecap}
+\usepackage{amsmath}
+\usepackage[percent]{overpic}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC}
+%\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\renewcommand{\figurename}{Step}
+\newcommand\Ground{%
+\mathbin{\text{\begin{tikzpicture}[circuit ee IEC,yscale=0.6,xscale=0.5]
+\draw (0,2ex) to (0,0) node[ground,rotate=-90,xshift=.65ex] {};
+\end{tikzpicture}}}%
+}
+
+\newcommand{\step}[2]{
+  \begin{SCfigure}[][ht]
+    \captionsetup{singlelinecheck=off}
+    \caption[Caption]{\\\\ #2}
+    \includegraphics[width=.5\textwidth]{#1}
+  \end{SCfigure}
+}
+
+\newcommand{\response}[2]{
+	\begin{figure}[H]
+		\includegraphics[height=0.025\textheight]{#1}
+		\begin{itemize}
+			#2
+		\end{itemize}
+	\end{figure}
+}
+
+\usepackage[export]{adjustbox}
+
+\usepackage{MnSymbol,graphicx}
+\newcommand\Bigcircle{\raisebox{-0.5mm}{\scalebox{1.7}{$\bigcircle$}}}
+
+\newcommand\Biggercircle{\raisebox{-0.5mm}{\scalebox{2.7}{$\bigcircle$}}}
+
+\usepackage[section]{placeins}
+
+\newcommand{\AxisRotator}[1][rotate=0]{%
+    \tikz [x=0.25cm,y=0.60cm,line width=.2ex,-stealth,#1] \draw (0,0) arc (-150:150:1 and 1);%
+}
+
+\maxdeadcycles=1000
+\extrafloats{1000}
+
+
+\title{Ugly Box Node Construction Manual}
+\author{Waggle Team}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\section{Upward Facing Camera and Lightsense Assembly}
+\input{./UF_Camera_Lightsense}
+\clearpage
+
+\section{Side Facing Camera Assembly}
+\input{./SF_Camera}
+\clearpage
+
+\section{Main Assembly}
+\input{./Main_Assembly}
+\clearpage
+
+\section{Power Box}
+\input{./Power_Box}
+\clearpage
+
+\end{document}
