@@ -12,7 +12,9 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{float}
+
 \renewcommand{\figurename}{Step}
+
 \newcommand\Ground{%
 \mathbin{\text{\begin{tikzpicture}[circuit ee IEC,yscale=0.6,xscale=0.5]
 \draw (0,2ex) to (0,0) node[ground,rotate=-90,xshift=.65ex] {};
@@ -77,6 +79,10 @@
 
 \section{Power Box}
 \input{./Power_Box}
+\clearpage
+
+\section{Sensors and Shield}
+\input{./Sensors_Shield}
 \clearpage
 
 \end{document}
